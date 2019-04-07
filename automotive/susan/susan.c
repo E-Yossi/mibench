@@ -310,7 +310,7 @@ typedef  struct {int x,y,info, dx, dy, I;} CORNER_LIST[MAX_CORNERS];
 
 /* }}} */
 /* {{{ usage() */
-
+void 
 usage()
 {
   printf("Usage: susan <in.pgm> <out.pgm> [options]\n\n");
