@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+//#define INV 0
+
 int main(int argc, char *argv[]) {
 	unsigned MAXSIZE;
 	unsigned MAXWAVES;
@@ -14,6 +16,7 @@ int main(int argc, char *argv[]) {
 	float *amp;
 	int invfft=0;
 
+    #ifdef DEBUG
 	if (argc<3)
 	{
 		printf("Usage: fft <waves> <length> -i\n");
@@ -26,7 +29,12 @@ int main(int argc, char *argv[]) {
 		invfft = !strncmp(argv[3],"-i",2);
 	MAXSIZE=atoi(argv[2]);
 	MAXWAVES=atoi(argv[1]);
-		
+    #else //DEBUG
+    invfft = INV;
+    MAXSIZE = MAXSIZE_D;
+    MAXWAVES = MAXWAVES_D;
+    #endif
+ //printf("maxsize %d maxwaves %d inv %d\n",MAXSIZE, MAXWAVES, invfft); 
  srand(1);
 
  RealIn=(float*)malloc(sizeof(float)*MAXSIZE);
@@ -63,7 +71,8 @@ int main(int argc, char *argv[]) {
 
  /* regular*/
  fft_float (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
- 
+
+ #ifdef DEBUG
  printf("RealOut:\n");
  for (i=0;i<MAXSIZE;i++)
    printf("%f \t", RealOut[i]);
@@ -73,6 +82,7 @@ printf("ImagOut:\n");
  for (i=0;i<MAXSIZE;i++)
    printf("%f \t", ImagOut[i]);
    printf("\n");
+ #endif// DEBUG
 
  free(RealIn);
  free(ImagIn);
