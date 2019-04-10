@@ -10,7 +10,7 @@ automotive
         cp automotive/qsort/qsort_small rv64gcc_obj/automotive_qsort_small     
     - susan - not working
 
-consumer
+consumer - skipped - almost all are using files and hence system calls
     - jpeg
     - lame  
     - mad  
@@ -23,10 +23,12 @@ consumer
     - typeset
 
 network
-    - dijkstra  
-    - patricia
+    - dijkstra - working
+        cp network/dijkstra/dijkstra_small rv64gcc_obj/network_dijkstra_small
+        cp network/dijkstra/dijkstra_large rv64gcc_obj/network_dijkstra_large
+    - patricia - can be done. requires alot of affort
 
-office
+office - skipped - almost all are using files and hence system calls
     - ghostscript  
     - ispell  
     - rsynth  
@@ -34,13 +36,18 @@ office
     - stringsearch
 
 security
-    - blowfish  
-    - pgp  
+    - blowfish -not working/ requires system calls
+    - pgp -not working /requires system call
     - rijndael  
     - sha
 
 telecomm
-adpcm  CRC32  FFT  gsm
+    - adpcm  
+    - CRC32  
+    - FFT - working, execute:
+        make small
+        make large
+    - gsm
 
 
 -----------------------
