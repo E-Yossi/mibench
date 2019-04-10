@@ -1,0 +1,48 @@
+test status:
+
+automotive
+    - basicmath - working, run make and:
+        cp automotive/basicmath/basicmath_large rv64gcc_obj/automotive_basicmath_large
+        cp automotive/basicmath/basicmath_small rv64gcc_obj/automotive_basicmath_small     
+    - bitcount - using operation system, not supposet to work 
+    - qsort  - working, run make, input data can be also changed.
+        cp automotive/qsort/qsort_large rv64gcc_obj/automotive_qsort_large
+        cp automotive/qsort/qsort_small rv64gcc_obj/automotive_qsort_small     
+    - susan - not working
+
+consumer
+    - jpeg
+    - lame  
+    - mad  
+    - tiff2bw  
+    - tiff2rgba  
+    - tiff-data  
+    - tiffdither  
+    - tiffmedian  
+    - tiff-v3.5.4  
+    - typeset
+
+network
+    - dijkstra  
+    - patricia
+
+office
+    - ghostscript  
+    - ispell  
+    - rsynth  
+    - sphinx  
+    - stringsearch
+
+security
+    - blowfish  
+    - pgp  
+    - rijndael  
+    - sha
+
+telecomm
+adpcm  CRC32  FFT  gsm
+
+
+-----------------------
+rv64gcc_obj
+
