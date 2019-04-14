@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
+#include "fourier.h"
 //#define INV 0
 
 int main(int argc, char *argv[]) {

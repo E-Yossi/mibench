@@ -1,5 +1,6 @@
 #ifndef SHA_H
 #define SHA_H
+#include <stdio.h>
 
 /* NIST Secure Hash Algorithm */
 /* heavily modified from Peter C. Gutmann's implementation */
